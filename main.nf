@@ -11,11 +11,11 @@ process bwa {
   path index_files
 
   output:
-  file("zid.bam")
+  file("zid.sam")
 
   script:
   """
-  bwa mem -t 2 -R '@RG\tID:foo\tSM:bar' Homo_sapiens_assembly38.fasta.64 ${fastq1} ${fastq2} | samtools view -bS - > zid.bam
+  bwa mem -t 2 -R '@RG\tID:foo\tSM:bar' Homo_sapiens_assembly38.fasta.64 ${fastq1} ${fastq2} > zid.sam
   """
 
 }
