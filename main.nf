@@ -15,7 +15,7 @@ process bwa {
 
   script:
   """
-  bwa mem -t 2 -R '@RG\tID:foo\tSM:bar' ${genome} ${fastq1} ${fastq2} | samtools view -bS - > zid.bam
+  bwa mem -t 2 -R '@RG\tID:foo\tSM:bar' Homo_sapiens_assembly38.fasta.64 ${fastq1} ${fastq2} | samtools view -bS - > zid.bam
   """
 
 }
